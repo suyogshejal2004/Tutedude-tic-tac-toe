@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet,  } from 'react-native';
+import { SafeAreaView, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import Header from '../components/Header';
 import Board from '../components/Board';
+import auth from '@react-native-firebase/auth';
 
 const GameScreen = () => {
   const [board, setBoard] = useState<(string | null)[]>(Array(9).fill(null));
@@ -40,10 +41,24 @@ const GameScreen = () => {
     return null;
   };
 
+  const handleLogout = async () => {
+    try {
+      await auth().signOut();
+      Alert.alert('Logged Out', 'You have been successfully logged out');
+      navigation.replace('Login');
+    } catch (error: any) {
+      Alert.alert('Logout Failed', error.message);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Header currentPlayer={currentPlayer} />
       <Board board={board} onPress={handlePress} />
+      
+      <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+        <Text style={styles.logoutText}>🚪 Logout</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -53,5 +68,17 @@ export default GameScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1, backgroundColor: '#FDFEFE', alignItems: 'center', justifyContent: 'center',
+  },
+  logoutButton: {
+    marginTop: 30,
+    backgroundColor: '#E74C3C',
+    paddingHorizontal: 30,
+    paddingVertical: 12,
+    borderRadius: 10,
+  },
+  logoutText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
