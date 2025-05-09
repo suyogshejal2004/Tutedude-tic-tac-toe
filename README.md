@@ -1,98 +1,116 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+## ✨ Screenshots
 
-# Getting Started
+![Image](https://github.com/user-attachments/assets/de2900fc-8c80-481c-9616-2f0abdab71e7)
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+![Image](https://github.com/user-attachments/assets/6c01a938-3aa7-4fc4-b358-c2feff3915c8)
 
-## Step 1: Start Metro
+![Image](https://github.com/user-attachments/assets/915a9e65-1a16-459e-be59-da42a59a7cb8)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+![Image](https://github.com/user-attachments/assets/b9414b81-78a5-4398-81c8-ebb73703ceee)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+![Image](https://github.com/user-attachments/assets/7a698013-e8f5-4a87-a8ea-6c77f83a3ce5)
 
-```sh
-# Using npm
-npm start
+![Image](https://github.com/user-attachments/assets/18c8c0da-e1e3-49c1-99c0-8401078e5fb1
 
-# OR using Yarn
-yarn start
+![Image](https://github.com/user-attachments/assets/ed87ba18-9656-45c1-8972-9aed977d132e)
+
+---
+
+````markdown
+# 🔐 Firebase Auth Signup App
+
+A simple and modern **React Native app** using **Firebase Authentication** to handle user **signup and login** functionality. Built with TypeScript and enhanced with a clean, responsive UI for a smooth user experience.
+
+---
+
+## 📱 Features
+
+- 📧 Email & Password Signup using Firebase
+- 🔐 Input validation (email format, password strength)
+- 🧪 Error handling with user-friendly messages
+- 🎨 Modern, pretty UI with shadows and rounded fields
+- 🔁 Navigation between Login and Signup screens
+- 📲 Compatible with both Android & iOS
+
+---
+
+## 🛠️ Tech Stack
+
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Firebase Auth (via @react-native-firebase)](https://rnfirebase.io/)
+- [React Navigation](https://reactnavigation.org/)
+
+---
+
+## 🚀 Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+````
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
 ```
 
-## Step 2: Build and run your app
+### 3. Set Up Firebase
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+* Go to [Firebase Console](https://console.firebase.google.com/)
+* Create a project and enable **Email/Password Authentication**
+* Add Android/iOS app and download `google-services.json` (Android) or `GoogleService-Info.plist` (iOS)
+* Place the file in the correct location:
 
-### Android
+  * Android: `android/app/google-services.json`
+  * iOS: `ios/YourApp/GoogleService-Info.plist`
 
-```sh
-# Using npm
-npm run android
+### 4. Run the App
 
-# OR using Yarn
-yarn android
+```bash
+# For Android
+npx react-native run-android
+
+# For iOS
+npx react-native run-ios
 ```
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## 📂 Project Structure
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```
+.
+├── App.tsx
+├── src/
+│   ├── screens/
+│   │   ├── SignUpScreen.tsx
+│   │   └── LoginScreen.tsx
+│   └── navigation/
+│       └── AppNavigator.tsx
+├── android/
+├── ios/
+└── README.md
 ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
-```sh
-# Using npm
-npm run ios
+## 🤝 Contributing
 
-# OR using Yarn
-yarn ios
-```
+Pull requests are welcome! If you find a bug or want to suggest a feature, feel free to open an issue.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 📧 Contact
 
-## Step 3: Modify your app
+Made with ❤️ by **Suyog Shejal**
+[LinkedIn](https://www.linkedin.com/in/suyog-shejal-8637a3316) | [suyogshejal2004@gmail.com](mailto:suyogshejal2004@gmail.com)
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# Tutedude-tic-tac-toe
+---
